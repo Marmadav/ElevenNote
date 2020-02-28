@@ -39,11 +39,7 @@ namespace ElevenNote.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                        .Notes
-                        .Where(e => e.OwnerId == _userId)
-                        .Select(
+                var query = ctx.Notes.Where(e => e.OwnerId == _userId).Select(
                             e =>
                                 new NoteListItem
                                 {
